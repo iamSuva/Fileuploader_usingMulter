@@ -29,7 +29,8 @@ app.get("/",(req,res)=>{
 //     console.log(req.file);
 //     res.redirect("/");
 // })
-app.post("/upload",upload.fields([{name:"userimage"},{name:"resume"}]),(req,res)=>{
+// app.post("/upload",upload.fields([{name:"userimage"},{name:"resume"}]),(req,res)=>{
+app.post("/upload",upload.array('userimage',5),(req,res)=>{
     // console.log(req.body);
     console.log(req.files);
     res.redirect("/");
